@@ -1,0 +1,37 @@
+{
+  "name": "coding-project",
+  "version": "1.0.0",
+  "description": "シンプルなコーディング用プロジェクト",
+  "scripts": {
+    "dev": "vite",
+    "dev:poll": "vite --watch.usePolling --watch.interval=100",
+    "dev:port": "cross-env VITE_PORT=$npm_config_port vite",
+    "build": "rimraf dist && eslint src/js/**/*.js && stylelint src/scss/**/*.scss && vite build",
+    "build:quick": "vite build",
+    "build:dev": "cross-env NODE_ENV=development vite build",
+    "build:prod": "cross-env NODE_ENV=production vite build",
+    "preview": "vite preview --port 3000",
+    "format": "prettier --write \"src/**/*.{js,scss,html}\"",
+    "lint": "eslint src/js/**/*.js && stylelint src/scss/**/*.scss"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.6",
+    "sass": "^1.83.1",
+    "sharp": "^0.33.5",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard-scss": "^12.0.0",
+    "vite": "^6.0.7",
+    "vite-plugin-handlebars": "^2.0.0",
+    "vite-plugin-imagemin": "^0.6.1",
+    "vite-plugin-purgecss": "^0.2.12",
+    "vite-plugin-sass-glob-import": "^5.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

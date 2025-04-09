@@ -1,0 +1,29 @@
+/* 変数定義 */
+/* バージョン: 1.0.0 */
+
+// カラー
+$color-primary: #3b82f6;
+$color-secondary: #6366f1;
+$color-dark: #1e293b;
+$color-light: #f8fafc;
+$color-text: #334155;
+$color-text-light: #94a3b8;
+
+// フォントサイズ
+$font-xs: 0.75rem; // 12px
+$font-sm: 0.875rem; // 14px
+$font-base: 1rem; // 16px
+$font-lg: 1.125rem; // 18px
+$font-xl: 1.25rem; // 20px
+$font-2xl: 1.5rem; // 24px
+$font-3xl: 1.875rem; // 30px
+$font-4xl: 2.25rem; // 36px
+
+// ブレイクポイント
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "2xl": 1536px
+);

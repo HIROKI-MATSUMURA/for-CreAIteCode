@@ -1,0 +1,86 @@
+// グローバルミックスイン
+// バージョン: 1.0.0
+
+// メディアクエリ
+@mixin mq($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @error "指定されたブレイクポイント名は定義されていません: #{$breakpoint}";
+  }
+}
+
+// フレックスボックス
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// グリッド
+@mixin grid($columns: 1, $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+// ポジション
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+
+  @if $top != null {
+    top: $top;
+  }
+
+  @if $right != null {
+    right: $right;
+  }
+
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+
+  @if $left != null {
+    left: $left;
+  }
+}
+
+// 絶対位置センタリング
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// テキスト省略
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// フォントサイズのレスポンシブ対応
+@mixin responsive-font($min-size, $max-size, $min-width: 576px, $max-width: 1200px) {
+  font-size: $min-size;
+
+  @media screen and (min-width: $min-width) {
+    font-size: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * (100vw - #{$min-width}) / #{strip-unit($max-width - $min-width)});
+  }
+
+  @media screen and (min-width: $max-width) {
+    font-size: $max-size;
+  }
+}
+
+// 単位を削除する関数
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
