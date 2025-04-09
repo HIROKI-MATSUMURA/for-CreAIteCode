@@ -91,7 +91,6 @@ __pycache__/
 # プロジェクト固有
 # ビルド後に自動生成されるWebPファイル（画像処理によって生成）
 src/assets/images/**/*.webp
-public/images/**/*.webp
 
 # ビルド分析/統計
 stats.html
