@@ -1,16 +1,6 @@
 // グローバルミックスイン
 // バージョン: 1.0.0
 
-// メディアクエリ
-@mixin mq($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-      @content;
-    }
-  } @else {
-    @error "指定されたブレイクポイント名は定義されていません: #{$breakpoint}";
-  }
-}
 
 // フレックスボックス
 @mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
@@ -77,10 +67,3 @@
   }
 }
 
-// 単位を削除する関数
-@function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
-  @return $number;
-}
