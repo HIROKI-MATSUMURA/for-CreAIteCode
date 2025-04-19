@@ -1,4 +1,4 @@
-# コーディング用開発環境
+# コーディング用開発環境 for CreAIteCode
 
 このプロジェクトはViteを使った最新のコーディング環境です。SCSS、Handlebars、画像最適化など、モダンなWeb開発に必要な機能を備えています。
 
@@ -118,4 +118,3 @@ distのみの納品で問題ない。
 ## 著者
 
 - 合同会社CodeUps 代表 HIROKI
-# for-CreAIteCode
