@@ -1,5 +1,5 @@
 /* リキッドレイアウト対応 */
-@use "../global" as *;
+@use "../globals" as *;
 
 @if $startFrom == sp {
   // スマホファーストの場合
@@ -9,7 +9,6 @@
     @media (max-width: 375px) {
       font-size: vw(375, 16);
     }
-
 
     @include mq("md") {
       font-size: vw(strip-unit($l-inner), 16);
